@@ -78,7 +78,7 @@ header .links {
     justify-content: center;
     align-items: center;
 }
-header .links li a {
+header .links>li>a {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -89,7 +89,7 @@ header .links li a {
     transition: 0.3s;
     overflow: hidden;
 }
-header .links a::before {
+header .links>li>a::before {
     content: " ";
     position: absolute;
     width: 100%;
@@ -100,11 +100,11 @@ header .links a::before {
     transition: 0.3s;
     opacity: 0;
 }
-header .links a:hover {
+header .links>li>a:hover {
     color: var(--main-color);
     background-color: #fafafa;
 }
-header .links a:hover::before {
+header .links>li>a:hover::before {
     opacity: 1;
     left: 0;
 }
@@ -116,13 +116,89 @@ header .links a:hover::before {
     header .links {
         margin: auto;
     }
-    header .links li a {
+    header .links>li>a {
         padding:0 10px;
         font-size: 13px;
         height: 40px;
     }
 }
+header .links>li:last-child:hover {
+    .mega-menu {
+        display: block;
+    }
+}
 /* End Header */
+/* Start Mega Menu */
+.mega-menu {
+  background-color: white;
+  border-bottom: 3px solid var(--main-color);
+  position: absolute;
+  top: 70px;
+  left: 0;
+  right: 0;
+  display: none;
+  z-index: 1;
+}
+.mega-menu .container {
+    padding: 20px 0;
+    display: grid;
+    gap: 20px;
+    align-items: center;
+    grid-template-columns: 2fr 1fr 1fr;
+}
+.mega-menu img {
+    max-width: 90%;
+}
+@media (max-width:992px) {
+    .mega-menu .image {
+        display: none;
+    }
+    .mega-menu .container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+.mega-menu li {
+    padding: 15px;
+    position: relative;
+}
+.mega-menu li a::before {
+    content: " ";
+    position: absolute;
+    width:0;
+    height: 100%;
+    background-color:#fafafa;
+    top: 0;
+    left: 0;
+    transition: 0.3s;
+    z-index: -1;
+}
+.mega-menu li a:hover::before {
+    width: 100%;
+}
+.mega-menu li a{
+    color: var(--main-color);
+    font-weight: bold;
+    font-size: 20px;
+}
+.mega-menu li:not(:last-child) {
+    border-bottom: 1px solid #ddd;
+}
+@media (max-width:768px) {
+    .mega-menu {
+        top: 90px;
+    }
+    .mega-menu .container {
+        gap: 0;
+        grid-template-columns: 1fr;
+    }
+    .mega-menu .col.col-1 li:last-child {
+        border-bottom: 1px solid #ddd;
+    }
+}
+.mega-menu li a i {
+    margin-right: 15px;
+}
+/* End Mega Menu */
 /* Start Landing */
 .landing {
     position: relative;
