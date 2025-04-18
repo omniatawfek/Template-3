@@ -7,7 +7,7 @@
 :root {
     --main-color: #2196f3;
     --main-color-alt: #1787e0;
-    --padding:20px;
+    --padding:30px;
 }
 html {
     scroll-behavior: smooth;
@@ -48,7 +48,75 @@ a {
     }
 }
 /* End Global Rules */
-
+/* Start Component */
+.heading {
+    margin: 70px auto;
+    position: relative;
+    z-index: 1;
+    width: fit-content;
+    padding: 10px;
+    transition: .3s;
+    text-transform: uppercase;
+    font-size: 30px;
+    border: 2px solid black;
+    }
+.heading::after,
+.heading::before {
+    content: " ";
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--main-color);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.heading::before {
+    left: -30px;
+}
+.heading::after {
+    right: -30px;
+}
+.heading:hover {
+    color: white;
+    border: 2px solid white;
+    transition-delay: 0.5s;
+  }
+.heading:hover::before {
+    z-index: -1;
+    animation: left-move 0.5s linear forwards;
+  }
+.heading:hover::after {
+    z-index: -1;
+    animation: right-move 0.5s linear forwards;
+}
+@keyframes left-move {
+    50% {
+      left: 0;
+      width: 12px;
+      height: 12px;
+    }
+    100% {
+      left: 0;
+      border-radius: 0;
+      width: 50%;
+      height: 100%;
+    }
+  }
+  @keyframes right-move {
+    50% {
+      right: 0;
+      width: 12px;
+      height: 12px;
+    }
+    100% {
+      right: 0;
+      border-radius: 0;
+      width: 50%;
+      height: 100%;
+    }
+  }
+/* End Component */
 /* Start Header */
 header {
     background-color: white;
@@ -294,3 +362,67 @@ animation: up-down 4s linear infinite ;
 }
 
 /* End Landing */
+/* Start Articles */
+.articles {
+    padding-top: var(--padding);
+    padding-bottom: var(--padding);
+}
+.articles .main-page{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+.articles .main-page .box {
+    width:250px;
+    box-shadow: 0 0 10px #ddd;
+    transition: .3s;
+    border-radius: 10px;
+}
+.articles .main-page .box:hover {
+    transform: translateY(-20px);
+    box-shadow: 0 0 10px #666;
+}
+.articles .main-page .box img {
+    width: 600px;
+    max-width: 100%;
+    border-radius: 10px 10px 0 0 ;
+}
+.articles .main-page .box .text {
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+}
+.articles .main-page .box .text h3 {
+    font-size: 20px;
+}
+.articles .main-page .box .text p{
+    color: #666;
+    line-height: 1.6;
+    margin-top: 10px;
+    
+}
+.articles .main-page .box .box-foot {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--main-color);
+}
+.articles .main-page .box .box-foot a {
+    color: var(--main-color);
+}
+.articles .main-page .box .box-foot i {
+    transition: .3s;
+}
+.articles .main-page .box:hover i {
+    animation: bounce 1s linear infinite;
+}
+@keyframes bounce {
+    0%,10%,20%,50%,80%,100%{
+        transform: translateX(0);
+    }
+    40%,60% {
+        transform: translateX(10px);
+    }
+}
+/* End Articles */
