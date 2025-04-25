@@ -378,6 +378,7 @@ animation: up-down 4s linear infinite ;
     box-shadow: 0 0 10px #ddd;
     transition: .3s;
     border-radius: 10px;
+    overflow: hidden;
 }
 .articles .main-page .box:hover {
     transform: translateY(-20px);
@@ -386,7 +387,6 @@ animation: up-down 4s linear infinite ;
 .articles .main-page .box img {
     width: 600px;
     max-width: 100%;
-    border-radius: 10px 10px 0 0 ;
 }
 .articles .main-page .box .text {
     padding: 20px;
@@ -489,3 +489,146 @@ animation: up-down 4s linear infinite ;
     transform: rotate(5deg) scale(1.1);
 }
 /* End Gallery */
+/* Start Features */
+.features {
+    padding-top:50px ;
+    padding-bottom: 50px;
+}
+.features .boxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    gap: 30px;
+}
+.features .box {
+    border: 1px solid #e1d9d9;
+    position: relative; 
+    overflow: hidden; 
+}
+.features .image {
+    position: relative;
+    overflow: hidden;
+}
+.features .image::after {
+    content: " ";
+    position: absolute;
+    bottom:-0;
+    right: 0;
+    border-style: solid;
+    border-width: 0 0 170px 500px;
+    border-color: transparent transparent white transparent;
+    z-index: 2;
+    transition: .3s;
+}
+.features .box:hover .image::after {
+    border-width: 170px 500px 170px 0;
+}
+.features img {
+    max-width: 100%;
+}
+.features .box .image::before {
+    content: " ";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: .4;
+    z-index: 1;
+}
+.features .box.one .image::before {
+    background-color: rgb(244, 64, 54);
+}
+.features .box.two .image::before {
+background-color: rgb(0, 150, 136);
+}
+.features .box.three .image::before {
+background-color:rgb(3, 169, 244);
+}
+.features .content {
+    text-align: center;
+    padding: 30px;
+}
+.features .content h2 {
+font-size: 40px;
+margin-bottom: 40px;
+position: relative;
+width: fit-content;
+margin-left: auto;
+margin-right: auto;
+}
+.features .box h2::after {
+    content: " ";
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 5px;
+}
+.features .box.one h2::after {
+    background-color: rgb(244, 64, 54)
+}
+.features .box.two h2::after {
+    background-color:rgb(0, 150, 136);
+}
+.features .box.three h2::after {
+    background-color:rgb(3, 169, 244);
+}
+.features .content p {
+color:#666 ;
+line-height: 2;
+padding: 25px;
+font-size: 20px;
+margin-bottom: 30px;
+}
+.features .box a {
+padding: 10px 30px;
+font-size: 20px;
+border-radius: 5px;
+position: relative;
+display: inline-block;
+cursor: pointer;
+transition:color .3s;
+z-index: 1;
+overflow: hidden;
+font-weight: bold;
+}
+.features .box.one a {
+    color: rgb(244, 64, 54);
+    border:3px solid  rgb(244, 64, 54); 
+}
+.features .box.two a {
+    color:rgb(0, 150, 136);
+    border:3px solid rgb(0, 150, 136);
+}
+.features .box.three a {
+    color: rgb(3, 169, 244);
+    border:3px solid rgb(3, 169, 244);
+}
+.features .box:hover a {
+    color: white;
+}
+.features .box:hover a::before{
+    width: 100%;
+}
+.features .box a::before {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    transition:width .3s;
+    z-index: -1;
+}
+.features .box.one a::before {
+    background-color: rgb(244, 64, 54);
+}
+.features .box.two a::before {
+    background-color:rgb(0, 150, 136);
+}
+.features .box.three a::before {
+    background-color:rgb(3, 169, 244);
+}
+
+/* End Features */
