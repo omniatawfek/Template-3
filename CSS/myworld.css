@@ -57,7 +57,7 @@ a {
     padding: 10px;
     transition: .3s;
     text-transform: uppercase;
-    font-size: 30px;
+    font-size: 25px;
     border: 2px solid black;
     }
 .heading::after,
@@ -116,6 +116,11 @@ a {
       height: 100%;
     }
   }
+@media(max-width:375px) {
+    .heading {
+        font-size: 20px;
+    }
+}
 /* End Component */
 /* Start Header */
 header {
@@ -632,3 +637,138 @@ font-weight: bold;
 }
 
 /* End Features */
+/* Start Testimonials */
+.testimonials {
+    background-color: #ececec;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.testimonials .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    gap: 40px;
+}
+.testimonials .box {
+position: relative;
+background-color: white;
+padding: 20px;
+border-radius: 7px;
+box-shadow: 0 2px 4px rgb(0 0 0 / 7%);
+}
+.testimonials .box .image {
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translateY(-50%);
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    background-color: #ececec;
+    border-radius: 50%;
+}
+.testimonials .box .image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.testimonials .box p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #666;
+    line-height: 1.5;
+}
+.testimonials .box .fa.fa-star {
+    color: rgb(255, 208, 0);
+}
+/* End Testimonials */
+/* Start Team Membes */
+.team-members {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.team-members .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px, 1fr));
+    gap:40px;
+}
+.team-members .box {
+    position: relative;
+}
+.team-members .box::before ,
+.team-members .box::after {
+    content: " ";
+    position: absolute;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background-color: #f3f3f3;
+    transition: .3s;
+    border-radius: 10px;
+}
+.team-members .box::before {
+    width: calc(100% - 60px);
+    z-index: -2;
+}
+.team-members .box::after {
+    z-index: -1;
+    background-color: #e4e4e4;
+    width: 0;
+}
+.team-members .box:hover::after{
+    width: calc(100% - 60px);
+}
+.team-members .box:hover img {
+    filter: grayscale(100%);
+}
+.team-members .box .data {
+    display: flex;
+    align-items: center;
+    padding-top: 60px;
+}
+.team-members .box .image {
+    width: calc(100% - 60px);
+    transition: var(--main-transition);
+}
+.team-members .box .image img {
+    width: 100%;
+    border-radius: 10px;
+}
+.team-members .box .links {
+    width: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.team-members .box .links a {
+    width: 60px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.team-members .box .links i {
+    color: #666;
+    transition: .3s;
+}
+.team-members .box .links a:hover i {
+    color: var(--main-color);
+}
+.team-members .box .info {
+    padding-left: 80px;
+}
+.team-members .box h3 {
+    color: var(--main-color);
+    margin-bottom: 0;
+    margin-top: 10px;
+    font-size: 20px;
+    transition: .3s;
+}
+.team-members .box .info p {
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+.team-members .box:hover .info h3 {
+    color: #777;
+}
+/* End Team Membes */
