@@ -642,6 +642,7 @@ font-weight: bold;
     background-color: #ececec;
     padding-top: 50px;
     padding-bottom: 50px;
+    counter-reset:count ;
 }
 .testimonials .container {
     display: grid;
@@ -772,3 +773,98 @@ box-shadow: 0 2px 4px rgb(0 0 0 / 7%);
     color: #777;
 }
 /* End Team Membes */
+/* Start Services */
+.services {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #ececec;
+    counter-reset: count;
+}
+.services .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    gap: 40px;
+}
+.services .box {
+    box-shadow:0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 13%);
+    position: relative;
+    transition: .3s;
+}
+.services .box::before ,
+.services .box::after {
+content: " ";
+position: absolute;
+top: -3px;
+left: 50%;
+transform: translateX(-50%);
+height: 3px;
+width: 0;
+background-color: var(--main-color);
+transition: .3s;
+}
+.services .box:hover::before {
+    width: 50%;
+    left: 0;
+    transform: translateX(0);
+}
+.services .box:hover::after {
+    width: 50%;
+    right: 0;
+    transform: translateX(0);
+}
+.services .box:hover {
+    transform: translateY(-10px);
+}
+.services .box .head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    padding: 40px;
+}
+.services .box .head i {
+    color: #d5d5d5;
+    font-size: 70px;
+}
+.services .box .head h3 {
+    margin-top: 20px;
+    color: var(--main-color);
+    font-size: 25px;
+}
+.services .box .tail {
+    background-color: #f9f9f9;
+    padding: 15px;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    overflow: hidden;
+}
+.services .box .tail::before {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: -14px;
+    background-color: var(--main-color);
+    width: 95px;
+    height: 100%;
+    transform: skew(-30deg);
+    border-right: 50px solid #d5d5d5;
+    
+}
+.services .box .tail::after {
+    content: '0'counter(count);
+    counter-increment: count;
+    color: white;
+    position: absolute;
+    left: 20px;
+    top: 5px;
+    font-weight: bold;
+    font-size: 30px;
+    z-index: 2;
+}
+.services .box .tail a{
+    color: var(--main-color);
+
+}
+/* End Services */
