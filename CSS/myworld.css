@@ -868,3 +868,120 @@ transition: .3s;
 
 }
 /* End Services */
+/* Start Our Skills */
+.our-skills {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.our-skills .container {
+    display: grid;
+    grid-template-columns: .75fr 1fr;
+    gap: 40px;
+}
+@media(max-width:992px) {
+    .our-skills .image {
+        display: none;
+    }
+    .our-skills .container {
+        grid-template-columns: 1fr;
+    }
+}
+.our-skills img {
+    width: 100%;
+}
+.our-skills .skill {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.our-skills .skill button {
+    background-color: white;
+    color: var(--main-color);
+    border: 1px solid #d5d5d5;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 2PX 4px;
+    border-radius: 5px;
+}
+.our-skills .rate {
+    background-color: #ececec;
+    width: 100%;
+    height: 30px;
+    margin: 20px 0;
+    position: relative;
+}
+.our-skills .rate span {
+    background-color: var(--main-color);
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+}
+/* End Our Skills */
+/* Start How It Works */
+.how-it-works {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #ececec;
+}
+.how-it-works .container {
+    display: flex;
+    align-items: center;
+    gap: 90px;
+}
+.how-it-works img {
+    flex: 1;
+    max-width: 98%;
+}
+.how-it-works .box img {
+    width: 70px;
+}
+.how-it-works .box {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 30px;
+    border: 1px solid white;
+    margin-bottom: 20px;
+    border-radius: 7px;
+    background-color:#f3f3f3;
+    position: relative;
+    z-index: 3;
+}
+.how-it-works .box::before {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #ececec;
+    width: 0;
+    height: 0;
+    z-index: -1;
+    transition: .3s;
+}
+.how-it-works .box:hover::before {
+    width: 100%;
+    height: 100%;
+}
+.how-it-works .box h3 {
+    font-size: 22px;
+}
+.how-it-works .box p {
+margin-top: 15px;
+line-height: 1.6;
+color: #777;
+}
+@media(max-width:992px) {
+    .how-it-works .container {
+        flex-direction: column;
+        gap: 40px;
+    }
+}
+@media(max-width:767px) {
+    .how-it-works .box {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+/* End How It Works */
